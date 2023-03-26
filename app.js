@@ -15,12 +15,46 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+const posts=[];
 
+app.get('/',function(req,res){
+    res.render('home',{homeStart:homeStartingContent,
+                        posts:posts});
+});
 
+app.get("/about",function(req,res){
+  res.render('about',{about:aboutContent});
+});
 
+app.get("/contact",function(req,res){
+  res.render('contact',{contact:contactContent});
+});
 
+app.get("/compose",function(req,res){
+  res.render('compose');
+});
 
+app.post("/compose",function(req,res){
+   const post={title:req.body.postTitle,
+            body:req.body.postBody};
+  // console.log(post['title']);
+    posts.push(post);
 
+  res.redirect("/");
+});
+
+app.get("/posts/:postName",function(req,res){
+  const postName=req.params.postName;
+
+  posts.forEach(function(post){
+    const storedTitle= post.title;
+
+    if (storedTitle===postName){
+     console.log('Match Found!');
+    }
+
+});
+});
 
 
 
