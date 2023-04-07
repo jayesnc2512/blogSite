@@ -4,10 +4,11 @@
     <%= homeStart%>
 </p>
 
-
     <%  posts.forEach(function(post){ %>
         <h2><%= post.title %></h2>
-        <p><%= post.body %></p>
+        <p><%= post.body.slice(0,100) +"..." %>
+        <a href="/posts/<%=post.title%>">read more</a>
+    </p>
     <% }) %>
 
 
