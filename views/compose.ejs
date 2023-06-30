@@ -2,8 +2,10 @@
 <h1>Compose</h1>
 <form action="/compose" method="post">
     <label>Title</label><br>
-    <input class="compose" type="text" name="postTitle">
-    <label>Post</label>
+    <input class="compose" type="text" name="postTitle"><br><br>
+    <label>Date:</label> <br>
+    <input class="compose" type="date" name="postDate" style="width:10%"><br><br>
+    <label>Post:</label>
     <textarea type="text" class="compose"  name="postBody" rows="6"></textarea>
     <button type="submit" class="button" name="publish">Publish</button> 
 </form>

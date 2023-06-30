@@ -7,7 +7,7 @@
     <%  posts.forEach(function(post){ %>
         <h2><%= post.title %></h2>
         <p><%= post.body.slice(0,100) +"..." %>
-        <a href="/posts/<%=post.title%>">read more</a>
+        <a href="/posts/<%=post._id%>">read more</a>
     </p>
     <% }) %>
     <h4>
